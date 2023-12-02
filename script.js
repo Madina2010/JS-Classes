@@ -1,93 +1,47 @@
-// // Math.floor
-
-// function mathfloor(son) {
-//     return Number.parseInt(son)
-// }
-
-// console.log(mathfloor(13.1000));
-
-// // Math.ceil
-
-// function mathceil(son) {
-//     son > parseInt(son) && console.log(parseInt(son) + 1);
-//     son == parseInt(son) && console.log(parseInt(son));
-// }
-
-// console.log(mathceil(12.5));
-
-// // Math.round
-
-// function mathround(son) {
-//     son >= parseInt(son) + 0.5 && console.log(parseInt(son) + 1);
-//     son < parseInt(son) + 0.5 && console.log(parseInt(son));
-// }
-
-// console.log(mathround(3.3));
-
-// // //////////////////////////////////////////////////////////////////////////////////////////
-
 // // 1 masala
 
-// // 1 
-// let user = {
-//     // 2  
-//     name: 'John',
-//     // 3
-//     surname: 'Smith'
+// let obj = {
+//     id : 1,
+//     name: 'WebBrain'
 // }
 
-// // 4
-// user.name = 'Pete';
-
-// // 5
-// delete user.name
-
-// console.log(user);
+// console.log(Object.keys(obj));
 
 // // 2 masala
 
-// let schedule = {};
+// let masala = {
+//     id : 1,
+//     name: 'WebBrain'
+// }
 
-// function isEmpty(obj) {
+// function son(obj) {
 //     for (let key in obj) {
-//         return 'false'
-//     }
-//     return 'true'
-// }
-
-// console.log(isEmpty(schedule));
-
-// // 3 masala
-
-// let salaries = {
-//     John : 150,
-//     Ann : 160,
-//     Pete : 130
-// }
-
-// let sum = 0;
-
-// for (let people in salaries) {
-//     sum += salaries[people]
-// }
-
-// console.log(sum);
-
-// // 4 masala
-
-// let menu = {
-//     width : 200,
-//     height : 300,
-//     title :"My menu"
-// }
-
-// function multiplyNumeric(m) {
-//     for (let key in m) {
-//         if (typeof m[key] === 'number') {
-//             m[key] *= 2
+//         if (typeof obj[key] === 'number') {
+//            console.log(obj[key]); 
 //         }
 //     }
 // }
 
-// multiplyNumeric(menu);
-// console.log(menu); 
+// son(masala);
+
+// // 3 masala
+
+
+// let masala3 = {
+//     id: 1,
+//     name: 'WebBrain',
+//     offline: true,
+//     online: true,
+//     individual: false
+// }
+
+// function bol(obj) {
+//     for (let key in obj) {
+//         if (typeof obj[key] === 'boolean') {
+//             console.log(`${key}: ${obj[key]}`);
+//         }
+//     }
+// }
+
+// bol(masala3);
+
