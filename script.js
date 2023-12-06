@@ -1,48 +1,50 @@
-// 1 masala
-
-let obj = {
-    id : 1,
-    name: 'WebBrain'
-}
-
-console.log(Object.keys(obj));
-
-// 2 masala
-
-let masala = {
-    id : 1,
-    name: 'WebBrain'
-}
-
-function son(obj) {
-    for (let key in obj) {
-        if (typeof obj[key] === 'number') {
-           console.log(obj[key]); 
-        }
-    }
-}
-
-son(masala);
-
-// 3 masala
-
-
-let masala3 = {
+let person = {
     id: 1,
-    name: 'WebBrain',
-    offline: true,
-    online: true,
-    individual: false
-}
-
-function bol(obj) {
-    for (let key in obj) {
-        if (typeof obj[key] === 'boolean') {
-            console.log(`${key}: ${obj[key]}`);
+    name: 'Odil',
+    age: 78,
+    child: {
+        id: 1,
+        name: 'Ali',
+        age: 48,
+        child: {
+            id: 1,
+            name: 'Umar',
+            age: 20
         }
     }
 }
 
-bol(masala3);
+let sum = 0;
 
-// 4 masala
+while (true) {
+    if (person) {
+        sum += person.age
+    } else {
+        break
+    }
+    person = person.child 
+}
+
+console.log(sum);
+
+// /////////////////////////////////////////////////
+
+let arr = [
+    {id: 1, name: 'Fozil'},
+    {id: 2, name: 'Odil'},
+    {id: 3, name: 'Alibek'},
+    {id: 4, name: 'Elyor'},
+]
+
+const onSearch = (input) => {
+    let result = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].name.toLowerCase().includes(input.toLowerCase())) {
+          result.push(arr[i])
+        }
+    }
+    console.log(result);
+}
+
+onSearch('o');
+
