@@ -1,46 +1,25 @@
-// CRUD => Create , Read, Update, Delete
+// 1 masala
 
-let cars = [
-    { id: 1, year: 1998, engine: 1, name: "Tico" },
-    { id: 2, year: 2005, engine: 1.2, name: "Matiz" },
-    { id: 3, year: 2010, engine: 1.6, name: "Gentra" },
-    { id: 4, year: 2010, engine: 1.5, name: "Cobalt" },
-    { id: 5, year: 2012, engine: 2, name: "Malibu" },
-    { id: 6, year: 2000, engine: 1.2, name: "Damas" },
-    { id: 7, year: 2018, engine: 2.4, name: "Tracker" },
-  ];
+var arr = [4, 10, 888, 99, 100];
+var max = arr.sort((a, b) => a - b);
+var maxresult = 'max - ' + arr[arr.length - 1];
 
-// Create
-const onCreate = (car) => {
-    cars.push(car);
+var arr = [4, 10, 888, 99, 100];
+var min = arr.sort((a, b) => b - a);
+var minresult = 'min - ' + arr[arr.length - 1];
+
+console.log(maxresult, minresult);
+
+// 2 masala
+
+var ar = ['olma', 'nok', 'banan', 'olma', 'nok', 'tarvuz']
+
+function DeleteMeva(name) {
+    let index;
+    while ((index = ar.indexOf(name)) !== -1) {
+        ar.splice(index, 1);
+    }
+    console.log(ar);
 }
 
-onCreate({id: cars.length + 1, year: 2023, engine:3,  name: 'BMW', });
-console.log(cars);
-
-// // Read
-const onRead = () => {
-    let data = cars.map(({id,name, year, engine}) => {
-        console.log(id,name, year, engine);
-    })
-}
-
-onRead();
-
-// // Update
-const onUpdate = (car) => {
-  let updated = cars.map(value => value.id === car.id ? {...value, name: 'Tayota', year: 2023} : value);
-
-  console.log(updated);
-}
-
-onUpdate({id: 3})
-
-// // Delete
-
-const onDelete = (ids) => {
-    let filtiredData = cars.filter((value) => value.id !== ids);
-    console.log(filtiredData);
-}
-
-onDelete(1);
+DeleteMeva('olma');
