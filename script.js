@@ -1,25 +1,26 @@
-// 1 masala
+// CRUD
+let fruits = [
+    { id : 1, name : 'Olma'},
+    { id : 2, name : 'Banan'},
+    { id : 3, name : 'Tarvuz'},
+    { id : 4, name : 'Anor'},
+];
 
-var arr = [4, 10, 888, 99, 100];
-var max = arr.sort((a, b) => a - b);
-var maxresult = 'max - ' + arr[arr.length - 1];
-
-var arr = [4, 10, 888, 99, 100];
-var min = arr.sort((a, b) => b - a);
-var minresult = 'min - ' + arr[arr.length - 1];
-
-console.log(maxresult, minresult);
-
-// 2 masala
-
-var ar = ['olma', 'nok', 'banan', 'olma', 'nok', 'tarvuz']
-
-function DeleteMeva(name) {
-    let index;
-    while ((index = ar.indexOf(name)) !== -1) {
-        ar.splice(index, 1);
-    }
-    console.log(ar);
+// Create
+const onCreate = (fruit ) => {
+    fruits.push(fruit) 
 }
 
-DeleteMeva('olma');
+onCreate({id : fruits.length + 1 , name : 'Nok'});
+console.log(fruits);
+
+// comment
+// const onCreate = (fruit => fruit parametr malumot yaratish uchun ishlatiladi) => {
+//   fruits.push => fruit ga yangi malumotni fruits ga qoshadi
+// }
+
+// onCreate({id : fruits.length => fruits dagi eng ohiri id ga qarab id beradi  + 1 , name : 'Nok'}); => onCreate chaqirlganda fruit ga malumot qoshadi
+// console.log(fruits); => fruits ni terminalda ko'rsatadi
+
+// Read
+
