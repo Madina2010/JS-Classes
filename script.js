@@ -1,90 +1,69 @@
-// CRUD
-let fruits = [
-    { id : 1, name : 'Olma'},
-    { id : 2, name : 'Banan'},
-    { id : 3, name : 'Tarvuz'},
-    { id : 4, name : 'Anor'},
-];
+// 1 masala getting sum of nested obj age
+let user = {
+    name: 'Test',
+    age: 30,
+    child: {
+        name: 'test',
+        age: 20,
+        child: {
+            name: 'test',
+            age: 10,
+            child: {
+                age: 100
+            }
+        }
+    }
+}
 
-// Create
-// const onCreate = (fruit ) => {
-//     fruits.push(fruit) 
-// }
+sum = 0;
 
-// onCreate({id : fruits.length + 1 , name : 'Nok'});
-// console.log(fruits);
+function getAge(obj) {
+    
+    sum += obj.age; // 30 + 20 + 10
+    if (obj.child) {
+        getAge(obj.child);
+    }
+    
+}
 
-// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// Read
-// const onRead = () => {
-//     let data = fruits.map((value) => {
-//         console.log(value.name);
-//     })
-// }
-
-// onRead();
-
-// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// Update
-// const onUpdate = (fruit) => {
-//     let updated = fruits.map(value => value.id === fruit.id);
-//     console.log(updated);
-// }
-
-// onUpdate({id : 1});
-
-// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// Delete
-// const onDelete = (i) => {
-//     let deleted = fruits.filter((value) => value.id !== i);
-//     console.log(deleted);
-// }
-
-// onDelete(1);
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// comment on create
-// const onCreate = (fruit => fruit parametr malumot yaratish uchun ishlatiladi) => {
-//   fruits.push => fruit ga yangi malumotni fruits ga qoshadi
-// }
-
-// onCreate({id : fruits.length => fruits dagi eng ohiri id ga qarab id beradi  + 1 , name : 'Nok'}); => onCreate chaqirlganda fruit ga malumot qoshadi
-// console.log(fruits); => fruits ni terminalda ko'rsatadi
-
-// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+getAge(user);
+console.log(sum);
 
 
-// comment on read
-// const onRead = () => {
-//     let data = fruits.map((value => fruits ni value lariga teng) => {
-//         console.log(value.name => fruits ni name value larini terminal da chiqarib beradi);
-//     })
-// }
 
-//  onRead(); => onRead chaqirlganda fruits ni chiqarib beradi
+//////////////////////////////////////////////////////////
 
-// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 2 masala finding sum of n
+// n = 5
+// 5 + 4 + 3 + 2 + 1 => 15
 
-// comment on update
+const findSum = (n) => {
+    
+    if (n > 0) {
+        return n + findSum(n - 1)
+    } else {
+        return n
+    }
+    
+}
 
-// const onUpdate = (value => fruits ni value lariga teng) => {
-//     let updated = fruits.map(value => value.id === fruits.id => agar value ni id  siga fruits ni id si togri kelsa true buladi agar togri kelmasa false buladi);
+console.log(findSum(5));
 
-//     console.log(updated => true yoki false chiqarib bersdi);
-// }
+////////////////////////////////////////////////////////
+// 3 masala removing duplicates without using new Set() [1, 1, 2, 2] => [1, 2]
+let arr = [1, 1, 2, 2];
 
-// onUpdate({id : 1} => qaysi id bersak oshani updated qiladi);
+const findDuplicate = (d) => {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+          if (arr[i] === arr[j]) {
+            console.log(arr[i]);
+          }
+        }
+      }
 
-// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+}
 
-// comment on delete
-// const onDelete = (i => fruits ni value lariga teng) => {
-//     let deleted = fruits.filter((value => obj larga teng) => value.id !== i => teng bulmasa arrayga solib beradi); => condition false bulsa malumot ni arrayga solmaydi
-//     console.log(deleted);
-// }
+findDuplicate();
 
-// onDelete(1);
+uniqueArray.indexOf(array[i]) === -1
