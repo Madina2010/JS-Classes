@@ -65,5 +65,3 @@ const findDuplicate = (d) => {
 }
 
 findDuplicate();
-
-uniqueArray.indexOf(array[i]) === -1
